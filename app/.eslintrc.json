@@ -25,5 +25,12 @@
     "object-curly-spacing": ["warn", "always"],
     "array-bracket-spacing": ["warn", "always"],
     "import/prefer-default-export": [0]
+  },
+  "settings": {
+    "import/extensions": [".js", ".jsx"],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.js", "**/settings.js"] }
+    ]
   }
 }
