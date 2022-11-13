@@ -11,10 +11,11 @@ cache:
 install:
   yarn
 after_success: yarn coverage
+format-coverage:
+  - prefix: /usr/src/app
 before_install: 
   - cd app
 before_script:
-  - cc-test-reporter format-coverage --prefix /app
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
