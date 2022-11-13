@@ -1,4 +1,5 @@
 language: node_js
+
 env:
   global:
     - CC_TEST_REPORTER_ID=737dee7e811467d5310cf8f820e73aeb60c9b004ac233ee6d98651e3fb168bb6
@@ -13,7 +14,7 @@ after_success: yarn coverage
 before_install: 
   - cd app
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter format-coverage --prefix /app
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
