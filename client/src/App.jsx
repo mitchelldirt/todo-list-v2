@@ -1,6 +1,10 @@
 import { useState } from 'react'
+import { getResponse, postResponse } from './services/testAPI'
 import reactLogo from './assets/react.svg'
 import './App.css'
+
+console.log(await postResponse.json())
+console.log(await getResponse.text())
 
 function App() {
   const [count, setCount] = useState(0)
