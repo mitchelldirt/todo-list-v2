@@ -22,5 +22,5 @@ before_script:
 script:
   - yarn test
 after_script:
-  - ./cc-test-reporter format-coverage --prefix /app after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build format-coverage --prefix /app --exit-code $TRAVIS_TEST_RESULT
 
