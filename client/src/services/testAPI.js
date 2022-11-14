@@ -1,11 +1,8 @@
-export const postResponse = await fetch('http://localhost:3000/project', {
-    method: 'POST',
+export const postResponse = await fetch('http://localhost:3000/task', {
+    method: 'DELETE',
     headers: {
-        'Content-Type': 'application/json'
-      },
-    body: JSON.stringify({
-        projectName: 'Programming'
-    })
+        'Content-Type': 'text/plain'
+      }
 });
 
 export const getResponse = await fetch('http://localhost:3000/project?projectName=Programming', {

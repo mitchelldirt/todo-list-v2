@@ -3,6 +3,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import indexRouter from './routes/index';
 import projectRouter from './routes/project';
+import taskRouter from './routes/task';
 
 const cors = require('cors');
 
@@ -18,5 +19,6 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/project', projectRouter);
+app.use('/task', taskRouter);
 
 export default app;
