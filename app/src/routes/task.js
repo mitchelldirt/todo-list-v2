@@ -1,7 +1,5 @@
 import express from 'express';
-import {
-  getTask, postTask, patchTask, deleteTask
-} from '../controllers';
+import { getTask, postTask, patchTask, deleteTask } from '../controllers';
 
 const taskRouter = express.Router();
 

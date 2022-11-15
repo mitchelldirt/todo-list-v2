@@ -3,13 +3,11 @@ export const postProject = (req, res) => {
     res.status(400).json({ Error: 'Missing project name!' });
     res.end();
   }
-  res
-    .status(200)
-    .json({
-      message: {
-        response: `Project '${req.body.projectName}' has been created`,
-      },
-    });
+  res.status(200).json({
+    message: {
+      response: `Project '${req.body.projectName}' has been created`,
+    },
+  });
 };
 
 export const getProject = (req, res) => {
