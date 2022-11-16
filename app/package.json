@@ -11,7 +11,8 @@
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "postpretty": "yarn lint --fix",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "runQuery": "babel-node ./src/utils/runQuery"
   },
   "dependencies": {
     "chai-better-shallow-deep-equal": "^1.1.1",
