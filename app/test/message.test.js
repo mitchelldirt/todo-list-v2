@@ -3,7 +3,7 @@ import { expect, server, BASE_URL } from './setup';
 describe('Messages', () => {
   it('get messages page', done => {
     server
-      .get(`${BASE_URL}/messages`)
+      .get('/messages')
       .expect(200)
       .end((err, res) => {
         expect(res.status).to.equal(200);
