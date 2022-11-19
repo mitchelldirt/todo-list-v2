@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "babel ./src --out-dir build",
     "start": "node ./build/bin/www",
-    "startdev": "nodemon --experimental-specifier-resolution=node --exec babel-node ./src/bin/www",
+    "dev": "nodemon --experimental-specifier-resolution=node --exec babel-node ./src/bin/www",
     "lint": "./node_modules/.bin/eslint ./test --fix && ./node_modules/.bin/eslint ./test --fix",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "postpretty": "yarn lint --fix",

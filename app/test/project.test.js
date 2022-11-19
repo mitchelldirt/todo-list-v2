@@ -11,8 +11,8 @@ describe('Test root project route', () => {
       .end((req, res) => {
         expect(res.status).to.equal(200);
         expect(res.body.message).to.shallowDeepEqual({
-            response: 'Project \'Test Project\' has been created',
-          });
+          response: 'Project \'Test Project\' has been created',
+        });
       });
   });
 });
