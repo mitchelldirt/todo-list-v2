@@ -15,7 +15,10 @@ format-coverage:
   - prefix: /usr/src/app
 before_install: 
   - cd app
+  - sudo cp /etc/postgresql/{9.6,10}/main/pg_hba.conf
+  - sudo /etc/init.d/postgresql restart
 before_script:
+  - psql -c 'create database testdb;' -U postgres
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
@@ -23,4 +26,13 @@ script:
   - yarn test
 after_script:
   - ./cc-test-reporter after-build format-coverage --prefix /app --exit-code $TRAVIS_TEST_RESULT
+services:
+  - postgresql
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+  
 
