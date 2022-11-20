@@ -1,13 +1,13 @@
-import { expect, server, BASE_URL } from './setup';
+import { server } from './setup';
 
 describe('Index page test', () => {
-  it('gets base url', (done) => {
+  it('gets base url', done => {
     server
-      .get(`${BASE_URL}`)
+      .get('/')
       .expect(200)
       .end((err, res) => {
-        expect(res.status).to.equal(200);
-        expect(res.body.message).to.equal('Is this thing on?');
+        expect(res.status).toBe(200);
+        expect(res.body.message).toBe('Is this thing on?');
         done();
       });
   });
