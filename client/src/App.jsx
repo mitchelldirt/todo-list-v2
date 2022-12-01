@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { getResponse, postResponse } from './services/testAPI'
+// import { getResponse, postResponse } from './services/testAPI'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { Task } from './components/main/task/task'
 
-console.log(await postResponse.text())
-console.log(await getResponse.text())
+// console.log(await postResponse.text())
+// console.log(await getResponse.text())
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,6 +32,11 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Task 
+        title='hello'
+        description='This task is cool'
+        dueDate='2022-11-30'
+        priority='5' />
     </div>
   )
 }
