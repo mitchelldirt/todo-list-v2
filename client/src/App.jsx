@@ -33,11 +33,12 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <Task 
-        title='hello'
+        title='Task Name'
         description='This task is cool'
         dueDate='2022-11-30'
         priority='5' />
-    </div>
+      </div>
+    
   )
 }
 

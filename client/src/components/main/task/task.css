@@ -1,4 +1,19 @@
+.task__container {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  align-items: center;
+}
+
 .task__title {
   color: red;
-  font-size: 10ch;
+  font-size: 2ch;
+  margin: 0;
+  padding: 0;
+}
+
+.task__dueDate {
+  font-size: 1.75ch;
+  margin: 0;
+  padding: 0;
 }
