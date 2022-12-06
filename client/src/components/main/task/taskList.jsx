@@ -9,6 +9,7 @@ const fetchTodoList = async() => {
         'Content-Type': 'text/plain'
       }
 });
+
 return data.json();
 }
 
@@ -26,9 +27,8 @@ export const TaskList = () => {
     return <span>Error: {error.message}</span>
   }
 
-console.log(data)
   return (data.tasks.map(task => <Task
-    key={task.id}
+    key={task.taskID}
     title={task.title}
     description={task.description}
     dueDate={task.dueDate}
