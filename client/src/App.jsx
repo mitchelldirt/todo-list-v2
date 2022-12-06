@@ -2,42 +2,74 @@ import { useState } from 'react'
 // import { getResponse, postResponse } from './services/testAPI'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import { Task } from './components/main/task/task'
-
+import { TaskList } from './components/main/task/taskList'
 // console.log(await postResponse.text())
 // console.log(await getResponse.text())
 
-function App() {
-  const [count, setCount] = useState(0)
+const sampleData = [
+  {
+    taskID: 1,
+    title: 'Work on your ToDo List Project',
+    description: 'Make some mock data to work with for the front end',
+    dueDate: '2022-12-13 19:00:00',
+    priority: 3,
+    userID: '124awfh3435u465ijerfh',
+    projectID: 1
+  },
+  {
+    taskID: 2,
+    title: 'Learn TypeScript',
+    description: 'Learn how to use typescript with JSX (aka TSX)',
+    dueDate: '2022-12-13 14:00:00',
+    priority: 3,
+    userID: '124awfh3435u465ijerfh',
+    projectID: 1
+  },
+  {
+    taskID: 3,
+    title: 'Finish your Shopify store',
+    description: 'Will provide value to the company',
+    dueDate: '2022-02-11 19:00:00',
+    priority: 4,
+    userID: '124awfh3435u465ijerfh',
+    projectID: 2
+  },
+  {
+    taskID: 4,
+    title: 'Create awesome automation in Jira',
+    description: 'Create an automation to rule all automation',
+    dueDate: '2022-12-22 19:00:00',
+    priority: 2,
+    userID: '124awfh3435u465ijerfh',
+    projectID: 2
+  },
+  {
+    taskID: 5,
+    title: 'Send the green V4',
+    description: 'Send the green V4 by being more confident in your footing',
+    dueDate: '2022-12-15 19:00:00',
+    priority: 1,
+    userID: '124awfh3435u465ijerfh',
+    projectID: 3
+  },
+  {
+    taskID: 6,
+    title: 'Send your first V5',
+    description: "Keep working on V4 climbs until you feel pretty good about them, then it's V5 time!",
+    dueDate: '2022-01-13 19:00:00',
+    priority: 5,
+    userID: '124awfh3435u465ijerfh',
+    projectID: 3
+  }
+]
 
+function App() {
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Task 
-        title='Task Name'
-        description='This task is cool'
-        dueDate='2022-11-30'
-        priority='5' />
-      </div>
+      <TaskList
+      taskData={sampleData}
+      />
+     </div> 
     
   )
 }
