@@ -13,7 +13,7 @@ const fetchTodoList = async() => {
 return data.json();
 }
 
-export const TaskList = () => {
+export const TaskList = ({projectID}) => {
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ['todos'],
     queryFn: fetchTodoList,
@@ -27,7 +27,8 @@ export const TaskList = () => {
     return <span>Error: {error.message}</span>
   }
 
-  return (data.tasks.map(task => <Task
+  return (
+    data.tasks.filter(task => task.projectID === projectID).map(task => <Task
     key={task.taskID}
     title={task.title}
     description={task.description}

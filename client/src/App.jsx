@@ -3,6 +3,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { TaskList } from './components/main/task/taskList'
+import { Project } from './components/main/task/project'
 import {
   useQuery,
   useMutation,
@@ -18,9 +19,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <TaskList
-
-        />
+        <Project
+          projectName={'Project'}
+          projectId={2}>
+        </Project>
       </div>
     </QueryClientProvider>
   )
