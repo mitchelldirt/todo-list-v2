@@ -11,6 +11,9 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import LoginButton from './components/Auth/login'
+import LogoutButton from './components/Auth/logout'
+import Profile from './components/Auth/profile'
 
 const queryClient = new QueryClient()
 
@@ -18,6 +21,9 @@ const queryClient = new QueryClient()
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <LoginButton />
+      <LogoutButton />
+      <Profile />
       <div className="App">
         <Project
           projectName={'Project'}
