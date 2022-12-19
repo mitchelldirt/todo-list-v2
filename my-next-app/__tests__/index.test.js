@@ -1,4 +1,4 @@
-import { server } from './setup';
+import { server } from '../../app/test/setup';
 
 describe('Index page test', () => {
   it('gets base url', done => {
