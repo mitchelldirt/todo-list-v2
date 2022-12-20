@@ -3,7 +3,7 @@ import { Task } from './task';
 import { useQuery } from '@tanstack/react-query'
 import styles from '../../../styles/taskList.module.css'
 
-const fetchTodoList = async() => {
+const fetchTodoList = async(): Promise<Task[]> => {
   const data = await fetch('/api/mockData', {
     method: 'GET',
     headers: {
@@ -11,11 +11,13 @@ const fetchTodoList = async() => {
       }
 });
 
-return data.json();
+const taskJSON: any = await data.json();
+
+return taskJSON.tasks;
 }
 
 export const TaskList = ({projectID}) => {
-  const { isLoading, isError, data, error } = useQuery({
+  const { isLoading, isError, data, error } = useQuery<Task[], Error>({
     queryKey: ['todos'],
     queryFn: fetchTodoList,
   })
@@ -28,13 +30,13 @@ export const TaskList = ({projectID}) => {
     return <span>Error: {error.message}</span>
   }
 
-  return (
-    data.tasks.filter(task => task.projectID === projectID).map(task => <Task
+  return <>{
+    data.filter(task => task.projectID === projectID).map(task => <Task
     key={task.taskID}
     title={task.title}
     description={task.description}
     dueDate={task.dueDate}
     priority={task.priority}
   />)
-  )
+  }</>
 }

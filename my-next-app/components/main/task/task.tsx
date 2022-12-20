@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from'../../../styles/task.module.css'
 
-export const Task = ({ title, description, dueDate, priority }) => {
+export const Task: React.FC<Task> = ({ title, description, dueDate, priority }: Task) => {
   return (
     <>
       <div className={styles.task__container}>
